@@ -1,0 +1,838 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --colorWhite: #fff;
+    --colorGrey: #6e6f72;
+    --colorLightGrey: #f1f1f1;
+    --colorBlue: #0176e0;
+    --colorLightBlue: #d5eefd;
+    --colorRed: #ff4747;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--colorWhite);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.notification-bar{
+    width: 100%;
+    height: 3rem;
+    color: var(--colorWhite);
+    text-align: center;
+    font-weight: 600;
+    padding: .8rem;
+    display: none;
+}
+
+nav{
+    width: 100%;
+    height: auto;
+    padding: .8rem;
+    background-color: var(--colorWhite);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+h1{
+    font-weight: 600;
+    color: var(--colorGrey);
+    font-size: larger;
+}
+
+.logo{
+    display: flex;
+    column-gap: .7rem;
+    align-items: center;
+}
+
+.logo > img{
+    width: 3rem;
+}
+
+section{
+    width: 100%;
+    height: auto;
+}
+
+.interview-verify-container{
+    display: none;
+    position: absolute;
+    width: 40rem;
+    height: 50vh;
+    background-color: var(--colorWhite);
+    z-index: 1;
+    top: 20%;
+    left: 50%;
+    padding: 1rem;
+    border-radius: .7rem;
+    transform: translate(-50%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#verify-container-close{
+    position: absolute;
+    right: 0%;
+    padding-right: .8rem;
+    font-size: x-large;
+    font-weight: 500;
+    color: var(--colorGrey);
+    cursor: pointer;
+}
+
+.interview-verify-container > h3{
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--colorBlue);
+    font-weight: 600;
+}
+
+.interview-code-input{
+    background-color: var(--colorLightGrey);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 18rem;
+    height: 2.5rem;
+    text-indent: 1rem;
+    color: var(--colorGrey);
+    border-radius: .4rem;
+    border: none;
+    transform: translate(-50%);
+    outline: none;
+}
+
+.interview-code-input::placeholder{
+    color: var(--colorGrey);
+}
+
+.interview-verify-btn{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%);
+    cursor: pointer;
+    padding: .6rem;
+    font-weight: 600;
+    border-radius: .4rem;
+    width: 7rem;
+    text-align: center;
+    background-color: var(--colorBlue);
+    outline: none;
+    font-family: 'Montserrat';
+    font-size: medium;
+    border: none;
+    color: var(--colorWhite);
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+}
+
+.landing-page-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.landing-options-container{
+    width: 100%;
+    padding: 5%;
+}
+
+.landing-options-container > h2{
+    margin-top: 4rem;
+    font-size: xxx-large;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.landing-options-container > p{
+    font-size: medium;
+    font-weight: 600;
+    color: var(--colorGrey);
+}
+
+.landing-layouts-container{
+    width: 100%;
+    padding: 5%;
+}
+
+.landing-layouts-container > img{
+    position: relative;
+    top: 20%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.interview-options{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.admin-txt{
+    margin-top: 2rem;
+}
+
+.admin-txt > a{
+    color: var(--colorBlue);
+}
+
+.interview, .interview-results{
+    background-color: var(--colorBlue);
+    padding: 1rem;
+    width: 13rem;
+    color: var(--colorWhite);
+    font-weight: 600;
+    border-radius: .3rem;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+}
+
+.bx{
+    font-size: large;
+    font-weight: 500;
+}
+
+.search-container{
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.search-box{
+    width: 40%;
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    outline: none;
+    background-color: var(--colorWhite);
+    color: var(--colorBlue);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+input, textarea{
+    font-weight: 600;
+    font-size: medium;
+    font-family: 'Montserrat';
+}
+
+.search-box::placeholder{
+   color: var(--colorBlue);
+}
+
+.search-btn{
+    color: var(--colorBlue);
+    width: 4rem;
+    border: none;
+    border-radius: .4rem;
+    position: absolute;
+    cursor: pointer;
+    top: 55%;
+    right: 30%;
+    background-color: transparent;
+}
+
+.bx-search{
+    font-size: large;
+    font-weight: 600;
+    padding: .9rem;
+}
+
+.card{
+    width: 40rem;
+    height: auto;
+    margin: 5rem auto 4rem auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: .7rem;
+    padding: 1.5rem;
+}
+
+.profile-top-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile-top-container > img, #displayImage{
+    border-radius: 7rem !important;
+}
+
+.profile-top-container > img, #displayImage, #camera > video{
+    border-radius: 1rem;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    margin: 0rem auto 1rem auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: block;
+}
+
+#camera > video{
+    position: absolute;
+    left: 50%;
+    top: 3%;
+    transform: translate(-50%);
+}
+
+.profile-top-container > h5{
+    color: var(--colorGrey);
+}
+
+.profile-bottom-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    border-top: 2px solid #e0e0e0;
+}
+
+.profile-bottom-container > h4{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: 600;
+    color: var(--colorBlue);
+    margin: .5rem;
+}
+
+.interview-date{
+    color: var(--colorGrey);
+    font-size: small;
+    font-weight: 600;
+    width: 100%;
+    padding: .2rem;
+    text-align: center;
+}
+
+.progress-container{
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+.progress-title{
+    color: var(--colorBlue);
+    font-weight: 600;
+    font-size: medium;
+    margin-bottom: 1.2rem;
+}
+
+.progressbar-outer{
+    background-color: var(--colorLightBlue);
+    border-radius: .7rem;
+    margin-bottom: 1.2rem;
+    height: .4rem;
+}
+
+.progressbar{
+    background-color: var(--colorBlue);
+    height: 100%;
+    border-radius: .7rem;
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+}
+
+/*! remove these when controlling from js */
+
+#confidence-bar{
+    width: 80%;
+}
+
+#communications-bar{
+    width: 60%;
+}
+
+#login-form{
+    width: 23rem;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    border-radius: .5rem;
+    transform: translate(-50%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2rem;
+}
+
+#login-form > img, #signup-form > img{
+    width: 6.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.login-input{
+    margin: 0rem auto 1rem auto;
+    display: block;
+    width: 80%;
+    height: 2.7rem;
+    border: none;
+    outline: none;
+    color: var(--colorGrey);
+    border-bottom: 3px solid var(--colorBlue);
+}
+
+.login-input::placeholder{
+    color: var(--colorGrey);
+}
+
+.login-container{
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-container > a{
+    color: var(--colorBlue);
+    font-weight: 600;
+    font-size: medium;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.login-btn, .capture-btn{
+    background-color: var(--colorBlue);
+    padding: .7rem;
+    width: 10rem;
+    border-radius: .4rem;
+    outline: none;
+    border: none;
+    color: var(--colorWhite);
+    font-size: large;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    display: block;
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+.signup-txt{
+    font-weight: 600;
+    font-size: medium;
+    color: var(--colorGrey);
+    width: 100%;
+    text-align: center;
+}
+
+.signup-txt > a{
+    color: var(--colorBlue);
+}
+
+.interview-title, .interviewCode{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.interview-title{
+    color: var(--colorBlue);
+    margin-top: 1rem;
+}
+
+.interviewCode{
+    color: var(--colorGrey);
+    margin-top: .8rem;
+}
+
+#interviewApplicationForm{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 26rem;
+    height: auto;
+    padding: 2rem;
+}
+
+.capture-btn{
+    width: 10.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#signup-form{
+    width: 25rem;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 16%;
+    padding: 2rem;
+    border-radius: .6rem;
+}
+
+#signup-form > h2{
+    width: 100%;
+    text-align: center;
+    color: var(--colorBlue);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.signup-btn, .edit-profile-btn{
+    width: 9rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    background-color: var(--colorBlue);
+    padding: .6rem;
+    border: none;
+    outline: none;
+    color: var(--colorWhite);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: large;
+    border-radius: .4rem;
+    cursor: pointer;
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+}
+
+.admin-dashboard{
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-nav{
+    display: none;
+}
+
+.side-nav{
+    width: 17rem;
+    background-color: var(--colorWhite);
+    height: 100vh;
+    padding: 1rem;
+    position: fixed;
+    z-index: 1;
+}
+
+.side-menu{
+    margin-top: 3rem;
+    font-weight: 600;
+    margin-left: .8rem;
+}
+
+.side-menu > li > a{
+    color: var(--colorGrey);
+}
+
+.side-menu > li > a > .bx{
+    font-weight: 600;
+}
+
+.side-menu > li{
+    padding: .6rem;
+    margin-bottom: 1.5rem;
+}
+
+.workspace{
+    background-color: var(--colorLightGrey);
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.workspace-container{
+    height: 90vh;
+    width: calc(100% - 17rem);
+    background-color: var(--colorWhite);
+    margin-left: 17rem;
+    border-radius: .7rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    overflow-y: scroll;
+    padding: 2.5rem;
+}
+
+.workspace-container > h2{
+    color: var(--colorBlue);
+    margin-bottom: 2rem;
+}
+
+#createInterviewForm > input, textarea, .subInterviewForm > input, #update-profile-form > input, #update-password-form > input{
+    margin-bottom: 1.5rem;
+    outline: none;
+    border: none;
+    padding: .8rem;
+    border-radius: .5rem;
+    background-color: var(--colorLightGrey);
+    color: var(--colorGrey);
+    width: 100%;
+}
+
+label{
+    color: var(--colorBlue);
+    font-weight: 600;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.question-btn-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-btn-container > div{
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+    font-size: medium;
+    text-align: center;
+    width: 48%;
+    font-weight: 600;
+    padding: .8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: .4rem;
+    margin-bottom: 1rem;
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+}
+
+.interviewFormSubmitBtn{
+    width: 100%;
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+    padding: .8rem;
+    margin-bottom: 1.5rem;
+    font-size: medium;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    border-radius: .4rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    box-shadow: rgba(1, 118, 224, 0.24) 0px 3px 8px;
+}
+
+#question1{
+    margin-top: 3rem;
+}
+
+textarea{
+    height: 8rem;
+}
+
+.manage-interview-container{
+    display: flex;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.interview-name{
+    color: var(--colorBlue);
+    font-weight: 600;
+    font-size: larger;
+}
+
+.interview-code{
+    background-color: var(--colorBlue);
+    margin-top: 1rem;
+    color: var(--colorWhite);
+    font-size: large;
+    font-weight: 600;
+    border-radius: .4rem;
+    width: max-content;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.manage-right-container > .bx{
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+    font-size: large;
+    padding: .5rem;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+.update-profile-container{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.admin-profile-img{
+    width: 7rem;
+    margin: 2rem auto 1rem auto;
+    display: block;
+}
+
+.update-profile-container > h3, .update-profile-container > h5{
+    padding: .4rem;
+    text-align: center;
+}
+
+.update-profile-container > h5{
+    color: var(--colorGrey);
+}
+
+.edit-profile-btn{
+    width: max-content !important;
+}
+
+#update-profile-form > input{
+    margin-top: 2rem;
+    width: 17rem !important;
+}
+
+.update-password-container{
+    left: 50%;
+    transform: translate(-50%);
+    top: 10%;
+    height: auto;
+    padding-bottom: 3rem;
+    width: 26rem;
+    position: absolute;
+    border-radius: .5rem;
+    background-color: var(--colorWhite);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.update-password-container > i{
+    position: absolute;
+    right: .8rem;
+    top: .8rem;
+    font-weight: 700;
+    color: var(--colorGrey);
+    font-size: x-large;
+    cursor: pointer;
+}
+
+#update-password-form{
+    margin-top: 4rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 767px){
+
+    .interview-verify-container{
+        width: 90%;
+        height: 60%;
+    }
+
+    .landing-page-container{
+        flex-direction: column-reverse;
+    }
+
+    .landing-options-container > h2{
+        font-size: x-large;
+    }
+
+    .interview, .interview-results{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-box{
+        width: 80%;
+    }
+
+    .search-btn{
+        right: 8%;
+    }
+
+    .card{
+        width: 80%;
+    }
+
+    #login-form{
+        width: 80%;
+    }
+
+    .login-input{
+        width: 95%;
+    }
+
+    #interviewApplicationForm{
+        width: 95%;
+    }
+
+    #signup-form{
+        width: 90%;
+    }
+
+    .admin-nav{
+        width: 100%;
+        display: block;
+        position: fixed;
+        background-color: var(--colorWhite);
+        padding: 1.2rem;
+        z-index: 1;
+        text-align: right;
+    }
+
+    .admin-nav > .bx{
+        font-size: x-large;
+        color: var(--colorGrey);
+        font-weight: 600;
+    }
+
+    .side-nav{
+        left: -100%;
+        transition: .4s;
+    }
+
+    .show-menu{
+        left: 0;
+    }
+
+    .workspace{
+        padding: 1rem;
+        height: 100vh;
+    }
+
+    .workspace-container{
+        width: 100%;
+        margin-left: 0;
+        height: 85vh;
+        margin-top: 4rem;
+        padding: 1.5rem;
+    }
+
+    .question-btn-container > div{
+        font-size: small;
+    }
+
+    .update-password-container{
+        top: -20%;
+        width: 20rem;
+        transform: translate(-50%);
+    }
+}
+
+@media screen and (min-width: 768px){
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>InterviewByte</title>
+</head>
+<body>
+    <div class="notification-bar" id="notification-bar"></div>
+    <div class="admin-nav"><i class='bx bx-menu' id="menu"></i></div>
+    <section class="admin-dashboard">
+        <div class="side-nav" id="side-nav">
+            <a href="{{ url_for('indexPage') }}" class="logo-wrapper">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='assets/favicon.png') }}" alt="InterviewByte">
+                    <h1>InterviewByte</h1>
+                </div>
+            </a>
+    
+            <ul class="side-menu">
+                <li><a href="{{ url_for('createInterviewPage') }}"><i class='bx bx-pencil'></i> &nbsp; New Interview</a></li>
+                <li><a href="{{ url_for('manageInterview') }}"><i class='bx bx-cog'></i>  &nbsp; Manage Interviews</a></li>
+                <li><a href="{{ url_for('updateUserProfile') }}"><i class='bx bx-user'></i>  &nbsp; Update Profile</a></li>
+                <li><a href="{{ url_for('logoutAdmin') }}"><i class='bx bx-log-out'></i> &nbsp; Logout</a></li>
+            </ul>
+        </div>
+        <div class="workspace" id="workspace">
+            <div class="workspace-container" id="workspace-container">
+                {% block adminWorkspace %}
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/adminDashboard.js') }}"></script>
+</body>
+</html>

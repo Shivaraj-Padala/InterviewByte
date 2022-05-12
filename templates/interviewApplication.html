@@ -1,0 +1,19 @@
+{% extends 'baseTemplate.html' %}
+
+{% block bodySection %}
+<section>
+    <h2 class="interview-title">Python Interview</h2>
+    <h4 class="interviewCode">PYTHINTR01</h4>
+    <form id="interviewApplicationForm">
+        <img src="" alt="" id="displayImage">
+        <div id="camera"></div>
+        <div class="capture-btn" id="capture-btn">Capture Photo</div>
+        <input type="email" name="email" id="email" placeholder="Email" required class="login-input">
+        <input type="text" name="name" id="name" placeholder="Full Name" required class="login-input">
+        <input type="text" name="collegeName" id="collegeName" placeholder="Institution Name" required class="login-input">
+        <button type="submit" class="login-btn">Submit</button>
+    </form>
+</section>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+<script src="{{ url_for('static', filename='js/interviewApplication.js') }}"></script>
+{% endblock %}

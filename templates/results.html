@@ -1,0 +1,41 @@
+{% extends 'baseTemplate.html' %}
+
+{% block bodySection %}
+<section>
+    <div class="search-container">
+        <input type="email" name="email" id="email" class="search-box" placeholder="Search by email...">
+        <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+    </div>
+
+    <div class="card">
+        <div class="profile-top-container">
+            <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2019/10/10/w600X390/Robert.jpg" alt="">
+            <h3>Tony Stark</h3>
+            <h5>tonystark@gmail.com</h5>
+        </div>
+        <div class="profile-bottom-container">
+            <h4>Python Interview</h4>
+            <div class="interview-date">Date 07-12-2021</div>
+            <div class="interview-date">Time 10:30 AM</div>
+            <div class="progress-container">
+
+                <div class="progress-sub-container">
+                    <div class="progress-title">Confidence 80%</div>
+                    <div class="progressbar-outer">
+                        <div class="progressbar" id="confidence-bar"></div>
+                    </div>
+                </div>
+
+                <div class="progress-sub-container">
+                    <div class="progress-title">Communication Skills 60%</div>
+                    <div class="progressbar-outer">
+                        <div class="progressbar" id="communications-bar"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+{% endblock %}

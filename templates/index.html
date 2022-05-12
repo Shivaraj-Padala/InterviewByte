@@ -1,0 +1,27 @@
+{% extends 'baseTemplate.html' %}
+
+{% block bodySection %}
+<section>
+    <form class="interview-verify-container" id="interview-verify-container">
+        <i class='bx bx-x' id="verify-container-close"></i>
+        <h3>Enter your interview code for verfification</h3>
+        <input type="text" name="interview-code" id="interview-code" class="interview-code-input" placeholder="Interview Code" required>
+        <button type="submit" class="interview-verify-btn">Verify</button>
+    </form>
+    <div class="landing-page-container">
+        <div class="landing-options-container">
+            <h2>Take automated interviews on the go.</h2>
+            <p>InterviewByte lets you take mock interviews and also provides a detailed analysis of your performance in the mock interview.</p>
+            <div class="interview-options">
+                <div class="interview" id="interview-btn"><i class='bx bx-video'></i> &nbsp; Take interview</div>
+                <a href="{{ url_for('resultsPage') }}" class="interview-results"><i class='bx bx-book-bookmark'></i> &nbsp; Check results</a>
+            </div>
+            <p class="admin-txt">If you are an admin click <a href="{{ url_for('adminLoginPage') }}">here</a></p>
+        </div>
+        <div class="landing-layouts-container">
+            <img src="{{ url_for('static', filename='assets/interview.jpg') }}" alt="">
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/index.js') }}" type="module"></script>
+{% endblock %}

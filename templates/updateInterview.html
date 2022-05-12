@@ -1,0 +1,25 @@
+{% extends 'adminBaseTemplate.html' %}
+
+{% block adminWorkspace %}
+<h2>Edit Interview</h2>
+<form id="createInterviewForm">
+    <label for="interviewName">Interview Name</label>
+    <input type="text" name="interviewName" id="interviewName" placeholder="Ex: Science Interview" title="Enter the interview name" value="{{ interviewData.interviewName }}" required>
+    <label for="interviewcode">Interview Code</label>
+    <input type="text" name="interviewcode" id="interviewcode" placeholder="Ex: SCIINTR06" title="Unique code for students to access this interview" value="{{ interviewData.interviewCode }}" required readonly>
+    <label for="questionTimeDuration">Question Duration In Seconds</label>
+    <input type="text" name="questionTimeDuration" id="questionTimeDuration" placeholder="Ex: 30" title="Time duration for each question should be in seconds" value="{{ interviewData.questionDuration }}" required>
+    {% for i in range(interviewData.noOfQuestions) %}
+    {% for ques, ans in interviewData.interviewQuestionsData[i].items() %}
+    <input  type="text" placeholder="Question {{i+1}}" name="question{{i+1}}" id="question{{i+1}}" value="{{ ques }}" required>
+    <textarea placeholder="Enter multiple answer keywords seperated by comma punctuation mark" id="answer{{i+1}}" name="answer{{i+1}}" required>{{ ans }}</textarea>
+    {% endfor %}
+    {% endfor %}
+    <button type="submit" class="interviewFormSubmitBtn" id="interviewFormSubmitBtn">Update Interview</button>
+</form>
+<div class="question-btn-container">
+    <div class="apply-btn" id="addQuestion-btn">Add Question</div>
+    <div class="apply-btn" id="deleteQuestion-btn">Delete Question</div>
+</div>
+<script src="{{ url_for('static', filename='js/updateInterview.js') }}" type="module"></script>
+{% endblock %}

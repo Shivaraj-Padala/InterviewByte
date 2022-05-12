@@ -1,0 +1,16 @@
+{% extends 'baseTemplate.html' %}
+
+{% block bodySection %}
+<section>
+    <form id="signup-form">
+        <h2>Create Account</h2>
+        <img src="{{ url_for('static', filename='assets/user.png') }}" alt="">
+        <input type="text" name="name" id="name" placeholder="User Name" class="login-input" required>
+        <input type="email" name="email" id="email" placeholder="Email" class="login-input" required>
+        <input type="password" name="conf-password" id="conf-password" placeholder="Password" class="login-input" required>
+        <input type="password" name="password" id="password" placeholder="Confirm Password" class="login-input" required>
+        <button type="submit" class="signup-btn">Signup</button>
+    </form>
+</section>
+<script src="{{ url_for('static', filename='js/adminSignup.js') }}" type="module"></script>
+{% endblock %}

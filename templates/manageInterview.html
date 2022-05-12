@@ -1,0 +1,18 @@
+{% extends 'adminBaseTemplate.html' %}
+
+{% block adminWorkspace %}
+<h2>Manage Interviews</h2>
+{% for data in interviewsData %}
+<div class="manage-interview-container" data-details='{{ data }}'>
+    <div class="manage-left-container">
+        <div class="interview-name">{{ data['interviewName'] }}</div>
+        <div class="interview-code">{{ data['interviewCode'] }} <i class='bx bx-file-blank'></i></div>
+    </div>
+    <div class="manage-right-container">
+        <i class='bx bx-pencil'></i>
+        <i class='bx bx-trash-alt'></i>
+    </div>
+</div>
+{% endfor %}
+<script src="{{ url_for('static', filename='js/manageInterview.js') }}" type="module"></script>
+{% endblock %}

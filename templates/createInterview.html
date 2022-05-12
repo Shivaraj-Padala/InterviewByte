@@ -1,0 +1,19 @@
+{% extends 'adminBaseTemplate.html' %}
+
+{% block adminWorkspace %}
+<h2>Create New Interview</h2>
+<form id="createInterviewForm">
+    <label for="interviewName">Interview Name</label>
+    <input type="text" name="interviewName" id="interviewName" placeholder="Ex: Science Interview" title="Enter the interview name" required>
+    <label for="interviewcode">Interview Code</label>
+    <input type="text" name="interviewcode" id="interviewcode" placeholder="Ex: SCIINTR06" title="Unique code for students to access this interview" required>
+    <label for="questionTimeDuration">Question Duration In Seconds</label>
+    <input type="text" name="questionTimeDuration" id="questionTimeDuration" placeholder="Ex: 30" title="Time duration for each question should be in seconds" required>
+    <button type="submit" class="interviewFormSubmitBtn" id="interviewFormSubmitBtn">Create Interview</button>
+</form>
+<div class="question-btn-container">
+    <div class="apply-btn" id="addQuestion-btn">Add Question</div>
+    <div class="apply-btn" id="deleteQuestion-btn">Delete Question</div>
+</div>
+<script src="{{ url_for('static', filename='js/createInterview.js') }}" type="module"></script>
+{% endblock %}

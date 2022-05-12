@@ -1,0 +1,26 @@
+{% extends 'adminBaseTemplate.html' %}
+
+{% block adminWorkspace %}
+<h2>Update Profile</h2>
+<div class="update-profile-container">
+    <img src="{{ url_for('static', filename='assets/user.png') }}" alt="" class="admin-profile-img">
+    <h3>{{ adminInfo.username }}</h3>
+    <h5>{{ adminInfo.email }}</h5>
+    <div class="edit-profile-btn" id="edit-profile-btn">Edit Profile</div>
+    <form id="update-profile-form">
+        <input type="text" name="name" id="name" class="login-input" placeholder="Username" value="{{ adminInfo.username }}" required>
+        <button type="submit" class="edit-profile-btn">Update Profile</button>
+    </form>
+    <div class="edit-profile-btn" id="update-password-btn">Update Password</div>
+    <div class="update-password-container">
+        <i class='bx bx-x' id="update-profile-close-btn"></i>
+        <form id="update-password-form">
+            <input type="password" placeholder="Current Password" name="currentPassword" id="currentPassword" required>
+            <input type="password" placeholder="New Password" name="newPassword" id="newPassword" required>
+            <input type="password" placeholder="Confirm Password" name="confirmNewPassword" id="confirmNewPassword" required>
+            <button type="submit" class="edit-profile-btn">Update Password</button>
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/updateProfile.js') }}" type="module"></script>
+{% endblock %}

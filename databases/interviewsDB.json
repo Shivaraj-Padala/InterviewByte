@@ -1,0 +1,17 @@
+{
+   "data": [
+      {
+         "interviewName": "Python Interview",
+         "interviewCode": "PYINTR",
+         "questionDuration": "30",
+         "noOfQuestions": 1,
+         "interviewQuestionsData": [
+            {
+               "What is a data type": "int,float,char,string"
+            }
+         ],
+         "admin": "shivarajpadala@gmail.com",
+         "id": 219488176949461368
+      }
+   ]
+}
